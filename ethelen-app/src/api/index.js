@@ -1,10 +1,6 @@
 import axios from "axios";
 
-<<<<<<< HEAD:ethelen-app/src/api/index.js
-const BASE_URL = 'http://localhost:8080/api/';
-=======
 const BASE_URL = 'http://localhost:8080/';
->>>>>>> 800caa1d7b8604f8bcc9c0d695483c05a5c5c8b2:src/api/index.js
 
 export const ENDPIONTS = {
     Deposite: 'deposite',
