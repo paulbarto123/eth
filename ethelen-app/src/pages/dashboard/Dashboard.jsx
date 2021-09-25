@@ -25,37 +25,37 @@ export default function Dashboard() {
     const [depoValue, setDepoValue] = useState([])
 
     
-    switch(winrate) {
-        case "68.9%":
+    // switch(winrate) {
+    //     case "68.9%":
           
-        setDeposit("008")
-        console.log(deposit)  
-        break;
-        case "96.9%": setDeposit("006")
-        console.log("deposit",deposit)  
-        break;
-        case "97.3%": setDeposit("003")
-        console.log("deposit",deposit)  
-        break;
-        case "99.9%": setDeposit("009")
-        console.log("deposit",deposit)  
-        break;  
-        default: console.log(null)
-    }
-    const handleWinrate = (winrate) => {
-      if (winrate === "68.9%") {
-        deposit = "006"
-    }
-    if (winrate === "96.9%") {
-        deposit = "006"
-    }
-    if (winrate === "97.3%") {
-        deposit = "006"
-    }
-    if (winrate === "99.9%") {
-        deposit = "006"
-    }
-    }
+    //     setDeposit("008")
+    //     console.log(deposit)  
+    //     break;
+    //     case "96.9%": setDeposit("006")
+    //     console.log("deposit",deposit)  
+    //     break;
+    //     case "97.3%": setDeposit("003")
+    //     console.log("deposit",deposit)  
+    //     break;
+    //     case "99.9%": setDeposit("009")
+    //     console.log("deposit",deposit)  
+    //     break;  
+    //     default: console.log(null)
+    // }
+    // const handleWinrate = (winrate) => {
+    //   if (winrate === "68.9%") {
+    //     deposit = "006"
+    // }
+    // if (winrate === "96.9%") {
+    //     deposit = "006"
+    // }
+    // if (winrate === "97.3%") {
+    //     deposit = "006"
+    // }
+    // if (winrate === "99.9%") {
+    //     deposit = "006"
+    // }
+    // }
     
  
 
@@ -83,9 +83,11 @@ export default function Dashboard() {
         case "99.9%": setDeposit("009")
         console.log("deposit",deposit)  
         break;  
-        default: console.log(null)
+        default: setDeposit("008")
+
       }
-    }, [])
+    }, [winrate, deposit])
+
   return (
     <>  
       <div
