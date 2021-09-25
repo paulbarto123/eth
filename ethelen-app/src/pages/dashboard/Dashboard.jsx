@@ -68,14 +68,14 @@ export default function Dashboard() {
  
 
     useEffect(() => {
-        createAPIEndpoint(ENDPIONTS.FOODITEM).fetchAll()
+        createAPIEndpoint(ENDPIONTS.Deposite).fetchAll()
             .then(res => {
                 setDepoValue(res.data);
             })
             .catch(err => console.log(err))
     }, [])
   return (
-    <>
+    <>  
       <div
         style={{
           backgroundColor: "#12291c",
@@ -154,8 +154,8 @@ export default function Dashboard() {
                 Untuk konfirmasi aktivasi Cheat Slot dengan Winrate 100%!
               </Title>
               <Title level={5}>WAJIB DEPOSIT</Title>
-              {depoValue.map((item) => (
-                <Text style={{color: "#fff", fontWeight: 600}}>Rp.{item.name}.{deposit}</Text>
+              {depoValue.map((item, index) => (
+                <Text key= {index} style={{color: "#fff", fontWeight: 600}}>Rp.{ item.amount}.{deposit} </Text>
               ))}
               <Title level={3}>Win Rate  {winrate} MAXWIN</Title>
               <Title level={3}>
