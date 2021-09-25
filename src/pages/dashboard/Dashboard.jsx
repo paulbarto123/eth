@@ -28,7 +28,7 @@ export default function Dashboard() {
     console.log(selectedWinrate)
     //const [deposit, setDeposit] = useState()
     const [winrate] = useState(selectedWinrate)
-    const [depoValue, setDepoValue] = useState("")
+    const [depoValue, setDepoValue] = useState([])
 
     
     // switch(winrate) {
@@ -68,15 +68,14 @@ export default function Dashboard() {
  
 
     useEffect(() => {
-        createAPIEndpoint(ENDPIONTS.FOODITEM).fetchAll()
+        createAPIEndpoint(ENDPIONTS.Deposite).fetchAll()
             .then(res => {
-                setDepoValue(res.data);
                 setDepoValue(res.data);
             })
             .catch(err => console.log(err))
     }, [])
   return (
-    <>
+    <>  
       <div
         style={{
           backgroundColor: "#12291c",
@@ -156,14 +155,8 @@ export default function Dashboard() {
               </Title>
               <Title level={5}>WAJIB DEPOSIT</Title>
               {depoValue.map((item, index) => (
-                <Text key={index} style={{color: "#fff", fontWeight: 600}}>Rp.{item.name}.{deposit}</Text>
+                <Text key= {index} style={{color: "#fff", fontWeight: 600}}>Rp.{ item.amount}.{deposit} </Text>
               ))}
-{/*               
-              <Text style={{color: "#fff", fontWeight: 600}}>RP.200.{deposit}</Text>
-              <Text style={{color: "#fff", fontWeight: 600}}>Rp.500.{deposit}</Text>
-              <Text style={{color: "#fff", fontWeight: 600}}>Rp.400.{deposit}</Text>
-              <Text style={{color: "#fff", fontWeight: 600}}>RP.500.{deposit}</Text>
-              <Text style={{color: "#fff", fontWeight: 600}}>RP.600.{deposit}</Text> */}
               <Title level={3}>Win Rate  {winrate} MAXWIN</Title>
               <Title level={3}>
                 SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI

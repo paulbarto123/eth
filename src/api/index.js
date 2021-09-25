@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:44379/api/';
+const BASE_URL = 'http://localhost:8080/';
 
 export const ENDPIONTS = {
-    CUSTOMER: 'Customer',
+    Deposite: 'deposite',
     FOODITEM: 'FoodItem',
     ORDER: 'Order'
 }
