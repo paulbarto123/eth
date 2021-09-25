@@ -1,14 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {
-  Input,
   Image,
   Row,
   Col,
-  Button,
-  Space,
-  Checkbox,
-  Radio,
-  Select,
   Typography,
 } from "antd";
 import { createAPIEndpoint, ENDPIONTS } from "../../api";
@@ -25,8 +19,6 @@ const style = {
 export default function Dashboard() {
     
     let selectedWinrate = localStorage.getItem("winrate")
-    console.log(selectedWinrate)
-    //const [deposit, setDeposit] = useState()
     const [winrate] = useState(selectedWinrate)
     const [depoValue, setDepoValue] = useState([])
 
@@ -48,24 +40,21 @@ export default function Dashboard() {
     //     break;  
     //     default: console.log(null)
     // }
-     let deposit = "";
-    if (winrate === "68.9%") {
-        deposit = "006"
+    var deposit= '';
+
+    if (winrate === 68,9) {
+        deposit= '008'
     }
-    if (winrate === "96.9%") {
-        deposit = "006"
+    else if (winrate === 96,9) {
+        deposit = '006';
     }
-    if (winrate === "97.3%") {
-        deposit = "006"
+    else if (winrate === 97,3) {
+        deposit = '003';
     }
-    if (winrate === "99.9%") {
-        deposit = "006"
+    else if (winrate === 99,9) {
+        deposit = '009';
     }
-    // if(selectedWinrate === "68.9%")
-    // {
-    //     setDeposit()
-    // }
- 
+   
 
     useEffect(() => {
         createAPIEndpoint(ENDPIONTS.Deposite).fetchAll()
