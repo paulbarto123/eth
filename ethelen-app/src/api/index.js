@@ -1,16 +1,14 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:8080/';
+const BASE_URL = 'https://be-ethelen.herokuapp.com';
 
 export const ENDPIONTS = {
-    Deposite: 'deposite',
-    FOODITEM: 'FoodItem',
-    ORDER: 'Order'
+    Deposite: 'deposite'
 }
 
 export const createAPIEndpoint = endpoint => {
 
-    let url = BASE_URL + endpoint + '/';
+    let url = BASE_URL + '/' + endpoint + '/';
     return {
         fetchAll: () => axios.get(url),
         fetchById: id => axios.get(url + id),
