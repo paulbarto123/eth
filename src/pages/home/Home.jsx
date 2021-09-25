@@ -132,7 +132,7 @@ function Home() {
               <Space direction="vertical">
                 <Input placeholder="Username" />
                 <Link to="dashboard">
-                  <Button type="primary" block danger href="Dashboard">
+                  <Button type="primary" block danger href="Dashboard" >
                     Hacked
                   </Button>
                 </Link>
