@@ -106,10 +106,10 @@ function Home() {
                   style={{ width: 200 }}
                   onChange={handleWinrate}
                 >
-                  <Option value="68,9">Auto Winrate 68,9%</Option>
-                  <Option value="96,9">Auto Winrate 86,9%</Option>
-                  <Option value="97,3">Auto Winrate 97,3%</Option>
-                  <Option value="99,9">Auto Winrate 99,9%</Option>
+                  <Option value="68.9">Auto Winrate 68,9%</Option>
+                  <Option value="96.9">Auto Winrate 86,9%</Option>
+                  <Option value="97.3">Auto Winrate 97,3%</Option>
+                  <Option value="99.9">Auto Winrate 99,9%</Option>
                 </Select>
                 <Select
                   defaultValue="Auto Spin"
@@ -132,7 +132,7 @@ function Home() {
               <Space direction="vertical">
                 <Input placeholder="Username" />
                 <Link to="dashboard">
-                  <Button type="primary" block danger href="Dashboard" >
+                  <Button type="primary" block danger href="Dashboard">
                     Hacked
                   </Button>
                 </Link>

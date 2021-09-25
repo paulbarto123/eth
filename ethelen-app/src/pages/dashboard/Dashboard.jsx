@@ -1,10 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {
-  Image,
-  Row,
-  Col,
-  Typography,
-} from "antd";
+import React, { useState, useEffect } from "react";
+import { Image, Row, Col, Typography } from "antd";
 import { createAPIEndpoint, ENDPIONTS } from "../../api";
 import Timer from "../../component/Timer";
 
@@ -15,56 +10,62 @@ const style = {
   height: "70vh",
 };
 
-
 export default function Dashboard() {
-    
-    let selectedWinrate = localStorage.getItem("winrate")
-    const [winrate] = useState(selectedWinrate)
-    const [depoValue, setDepoValue] = useState([])
+  let selectedWinrate = localStorage.getItem("winrate");
+  console.log(selectedWinrate);
+  //const [deposit, setDeposit] = useState("")
+  const [winrate] = useState(selectedWinrate);
+  const [depoValue, setDepoValue] = useState([]);
 
-    
-    // switch(winrate) {
-    //     case "68.9%":
-          
-    //     setDeposit("008")
-    //     console.log(deposit)  
-    //     break;
-    //     case "96.9%": setDeposit("006")
-    //     console.log("deposit",deposit)  
-    //     break;
-    //     case "97.3%": setDeposit("003")
-    //     console.log("deposit",deposit)  
-    //     break;
-    //     case "99.9%": setDeposit("009")
-    //     console.log("deposit",deposit)  
-    //     break;  
-    //     default: console.log(null)
-    // }
-    var deposit= '';
+  var deposit = "";
 
-    if (winrate === 68,9) {
-        deposit= '008'
-    }
-    else if (winrate === 96,9) {
-        deposit = '006';
-    }
-    else if (winrate === 97,3) {
-        deposit = '003';
-    }
-    else if (winrate === 99,9) {
-        deposit = '009';
-    }
-   
+  if (winrate === "68.9") {
+    deposit = "008";
+  }
+  if (winrate === "96.9") {
+    deposit = "006";
+  }
+  if (winrate === "97.3") {
+    deposit = "003";
+  }
+  if (winrate === "99.9") {
+    deposit = "009";
+  }
 
-    useEffect(() => {
-        createAPIEndpoint(ENDPIONTS.Deposite).fetchAll()
-            .then(res => {
-                setDepoValue(res.data);
-            })
-            .catch(err => console.log(err))
-    }, [])
+  useEffect(() => {
+    createAPIEndpoint(ENDPIONTS.Deposite)
+      .fetchAll()
+      .then((res) => {
+        setDepoValue(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  // useEffect(() => {
+  //   switch (winrate) {
+  //     case "68.9%":
+  //       setDeposit("008");
+  //       console.log(deposit);
+  //       break;
+  //     case "96.9%":
+  //       setDeposit("006");
+  //       console.log("deposit", deposit);
+  //       break;
+  //     case "97.3%":
+  //       setDeposit("003");
+  //       console.log("deposit", deposit);
+  //       break;
+  //     case "99.9%":
+  //       setDeposit("009");
+  //       console.log("deposit", deposit);
+  //       break;
+  //     default:
+  //       setDeposit("008");
+  //   }
+  // }, [winrate, deposit]);
+
   return (
-    <>  
+    <>
       <div
         style={{
           backgroundColor: "#12291c",
@@ -106,7 +107,7 @@ export default function Dashboard() {
               >
                 <Title level={4}>EXPIRED CHEAT TANGGAL:</Title>
                 <Title level={4} style={{ color: "white" }}>
-                25 Januari 2025
+                  25 Januari 2025
                 </Title>
               </div>
               <div
@@ -120,7 +121,6 @@ export default function Dashboard() {
               >
                 <Title level={4}>TIME</Title>
                 <Title level={4} style={{ color: "white" }}>
-                  
                   <Timer minutes={10} seconds={10} />
                 </Title>
               </div>
@@ -144,9 +144,11 @@ export default function Dashboard() {
               </Title>
               <Title level={5}>WAJIB DEPOSIT</Title>
               {depoValue.map((item, index) => (
-                <Text key= {index} style={{color: "#fff", fontWeight: 600}}>Rp.{ item.amount}.{deposit} </Text>
+                <Text key={index} style={{ color: "#fff", fontWeight: 600 }}>
+                  Rp.{item.amount}.{deposit}{" "}
+                </Text>
               ))}
-              <Title level={3}>Win Rate  {winrate} MAXWIN</Title>
+              <Title level={3}>Win Rate {winrate} MAXWIN</Title>
               <Title level={3}>
                 SEMAKIN TINGGI ANGKA DEPOSIT SEMAKIN TINGGI KEMENANGAN YANG DI
                 DAPAT
